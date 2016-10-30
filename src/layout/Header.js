@@ -6,7 +6,7 @@ export default class Header extends React.Component {
 
   render() {
     return (
-      <header class="header">
+      <header class="site__header">
         <div class="container">
           <div class="header__branding">
             <a href="/flexbox/">Home</a>

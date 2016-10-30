@@ -1,3 +1,51 @@
-body {
-  background: hotpink;
+
+/* LAYOUT */
+
+.body,
+#app,
+.site,
+.site__header,
+.site__main,
+.site__footer,
+.container {
+  display: flex;
+  flex-basis: 100%;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+
+.body {
+  padding: 0;
+  margin: 0;
+}
+
+.site {
+  // for sticky footer
+  min-height: 100vh;
+  flex-direction: column;
+}
+
+.container {
+  margin: 0 30px;
+  justify-content: space-between;
+}
+
+.site__header,
+.site__footer {
+  flex: none; // for sticky footer
+}
+
+.site__main {
+  flex: 1; // for sticky footer
+}
+
+
+
+
+
+@media screen and (min-width: 992px) {
+  .container {
+    max-width: 960px;
+  }
 }
