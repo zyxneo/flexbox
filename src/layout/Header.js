@@ -9,12 +9,12 @@ export default class Header extends React.Component {
       <header class="header">
         <div class="container">
           <div class="header__branding">
-            <a href="/">Home</a>
+            <a href="/flexbox/">Home</a>
           </div>
           <nav class="header__nav">
             <ul role="nav" class="list-inline">
-              <NavLink to="/" >Home</NavLink>
-              <NavLink to="/about" >About</NavLink>
+              <NavLink to="/flexbox/" >Home</NavLink>
+              <NavLink to="/flexbox/about" >About</NavLink>
             </ul>
           </nav>
 

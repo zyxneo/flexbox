@@ -6,8 +6,8 @@ import HomePage from "./pages/HomePage";
 import AboutPage from "./pages/AboutPage";
 
 export default (
-  <Route path="/" component={Layout}>
+  <Route path="/flexbox/" component={Layout}>
     <IndexRoute component={HomePage}/>
-    <Route path="/about" component={AboutPage}/>
+    <Route path="/flexbox/about" component={AboutPage}/>
   </Route>
 )

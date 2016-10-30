@@ -8,7 +8,8 @@ module.exports = {
   entry: './src/index.js',
   output: {
     filename: 'bundle.js',
-    path: './'
+    path: path.resolve(__dirname + "/flexbox"),
+    publicPath: "/flexbox/",
   },
   module: {
     loaders: [
