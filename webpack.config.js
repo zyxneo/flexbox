@@ -5,10 +5,10 @@ var debug = process.env.NODE_ENV !== "production";
 module.exports = {
   //devtool: debug ? "inline-sourcemap" : null,
 
-  entry: './src/index.js',
+  entry: "./src/index.js",
   output: {
-    filename: 'bundle.js',
-    path: './',
+    filename: "bundle.js",
+    path: "./",
     publicPath: "/flexbox/",
   },
   module: {
@@ -31,8 +31,17 @@ module.exports = {
       {
         test: /\.scss$/,
         loaders: ["style", "css", "sass"]
+      },
+      {
+        test: /\.html$/,
+        loader: "html"
       }
     ]
+  },
+  htmlLoader: {
+    ignoreCustomFragments: [/\{\{.*?}}/],
+    root: path.resolve(__dirname, "src/assets"),
+    attrs: ["img:src", "link:href"]
   },
   plugins: debug ? [] : [
     new webpack.optimize.DedupePlugin(),
