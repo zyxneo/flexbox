@@ -1,9 +1,282 @@
-<h3>Properties for the container</h3>
+<h3>Flexbox properties example</h3>
 
-<pre rel="CSS">
-<code class="language-css">
-.container {
-  display: flex; /* or inline-flex */
-}
-</code>
+
+<p>The structure of the examples:</p>
+
+<div class="flex__example">
+<pre class="prettyprint lang-html linenums flex__code">
+&lt;div class=&quot;flex__container&quot;&gt;
+  &lt;div class=&quot;flex__item flex__item_1&quot;&gt;item 1&lt;/div&gt;
+  &lt;div class=&quot;flex__item flex__item_2&quot;&gt;item 2&lt;/div&gt;
+  &lt;div class=&quot;flex__item flex__item_3&quot;&gt;item 3&lt;/div&gt;
+  &lt;div class=&quot;flex__item flex__item_4&quot;&gt;item 4&lt;/div&gt;
+  &lt;div class=&quot;flex__item flex__item_5&quot;&gt;item 5&lt;/div&gt;
+&lt;/div&gt;
 </pre>
+<div class="flex__container_noformat">
+  <div class="flex__item flex__item_1">item 1</div>
+  <div class="flex__item flex__item_2">item 2</div>
+  <div class="flex__item flex__item_3">item 3</div>
+  <div class="flex__item flex__item_4">item 4</div>
+  <div class="flex__item flex__item_5">item 5</div>
+</div>
+</div>
+
+<h3>Flex Containers: the "flex" and "inline-flex" display values</h3>
+<p>A basic setup with flexbox: "display: flex" defines a flex container and it enables a flex context for all its direct children.</p>
+
+<div class="flex__example">
+<pre class="prettyprint lang-css linenums flex__code">
+.flex {
+  &__container {
+    display: flex; /* or inline-flex */
+    background: mediumpurple;
+    border: 1px solid rebeccapurple;
+  }
+
+  &__item {
+    background: salmon;
+    color: firebrick;
+    border: 1px solid firebrick;
+  }
+}
+</pre>
+<div class="flex__container">
+  <div class="flex__item flex__item_1">item 1</div>
+  <div class="flex__item flex__item_2">item 2</div>
+  <div class="flex__item flex__item_3">item 3</div>
+  <div class="flex__item flex__item_4">item 4</div>
+  <div class="flex__item flex__item_5">item 5</div>
+</div>
+</div>
+
+<h2>Ordering and Orientation</h2>
+
+<h3>Flex Flow Direction: the "flex-direction" property</h3>
+<p>The flex-direction property specifies how flex items are placed in the flex container, by setting the direction of the flex container’s main axis. This determines the direction in which flex items are laid out.</p>
+<ul>
+  <li>row</li>
+  <li>row-reverse</li>
+  <li>column</li>
+  <li>column-reverse</li>
+</ul>
+<div class="flex__example">
+<pre class="prettyprint lang-css linenums flex__code">
+.flex {
+  &__container {
+    flex-direction: column-reverse;
+  }
+}
+</pre>
+<div class="flex__container flex__container_3">
+  <div class="flex__item flex__item_1">item 1</div>
+  <div class="flex__item flex__item_2">item 2</div>
+  <div class="flex__item flex__item_3">item 3</div>
+  <div class="flex__item flex__item_4">item 4</div>
+  <div class="flex__item flex__item_5">item 5</div>
+</div>
+</div>
+
+<h3>Flex Line Wrapping: the "flex-wrap" property</h3>
+<p>The flex-wrap property controls whether the flex container is single-line or multi-line, and the direction of the cross-axis, which determines the direction new lines are stacked in.</p>
+<ul>
+  <li>nowrap: The flex container is single-line. </li>
+  <li>wrap: The flex container is multi-line.</li>
+  <li>wrap-reverse: Same as wrap.</li>
+</ul>
+
+<div class="flex__example">
+<pre class="prettyprint lang-css linenums flex__code">
+.flex {
+  &__container {
+    flex-wrap: wrap;
+  }
+  &__item {
+    min-width: 40%; /* to see the wrapping */
+  }
+}
+</pre>
+<div class="flex__container flex__container_4">
+  <div class="flex__item flex__item_1">item 1</div>
+  <div class="flex__item flex__item_2">item 2</div>
+  <div class="flex__item flex__item_3">item 3</div>
+  <div class="flex__item flex__item_4">item 4</div>
+  <div class="flex__item flex__item_5">item 5</div>
+</div>
+</div>
+
+<h3>Flex Direction and Wrap: the flex-flow shorthand</h3>
+<p>The flex-flow property is a shorthand for setting the flex-direction and flex-wrap properties, which together define the flex container’s main and cross axes.</p>
+
+<div class="flex__example">
+<pre class="prettyprint lang-css linenums flex__code">
+.flex {
+  &__container {
+    flex-flow: row-reverse wrap-reverse;
+  }
+  &__item {
+    min-width: 40%; /* to see the wrapping */
+  }
+}
+</pre>
+<div class="flex__container flex__container_5">
+  <div class="flex__item flex__item_1">item 1</div>
+  <div class="flex__item flex__item_2">item 2</div>
+  <div class="flex__item flex__item_3">item 3</div>
+  <div class="flex__item flex__item_4">item 4</div>
+  <div class="flex__item flex__item_5">item 5</div>
+</div>
+</div>
+
+<h3>Display Order: the order property</h3>
+<p>Flex items are, by default, displayed and laid out in the same order as they appear in the source document. The order property can be used to change this ordering.</p>
+
+<div class="flex__example">
+<pre class="prettyprint lang-css linenums flex__code">
+.flex__item_1 { order: 3; }
+.flex__item_2 { order: 5; }
+.flex__item_3 { order: 4; }
+.flex__item_4 { order: 1; }
+.flex__item_5 { order: 2; }
+</pre>
+<div class="flex__container flex__container_6">
+  <div class="flex__item flex__item_1">item 1</div>
+  <div class="flex__item flex__item_2">item 2</div>
+  <div class="flex__item flex__item_3">item 3</div>
+  <div class="flex__item flex__item_4">item 4</div>
+  <div class="flex__item flex__item_5">item 5</div>
+</div>
+</div>
+
+<h2>Flexibility</h2>
+<h3>The flex Shorthand</h3>
+<p>The flex property specifies the components of a flexible length
+: the flex grow factor and flex shrink factor, and the flex basis.</p>
+<p>Value: none | [ <‘flex-grow’> <‘flex-shrink’>? || <‘flex-basis’> ]<br/>
+Initial: 1 0 auto </p>
+<p>See more: <a href="https://www.w3.org/TR/css-flexbox-1/#flex-property">w3.org - The flex Shorthand</a></p>
+<div class="flex__example">
+<pre class="prettyprint lang-css linenums flex__code">
+.flex__item_1 { flex-grow: 1; }
+.flex__item_2 { flex-shrink: 1; }
+.flex__item_3 { flex-basis: 90px; }
+.flex__item_4 { flex: 1 0; }
+.flex__item_5 { flex: 0 1; }
+</pre>
+<div class="flex__container flex__container_7">
+  <div class="flex__item flex__item_1">item 1</div>
+  <div class="flex__item flex__item_2">item 2</div>
+  <div class="flex__item flex__item_3">item 3</div>
+  <div class="flex__item flex__item_4">item 4</div>
+  <div class="flex__item flex__item_5">item 5</div>
+</div>
+</div>
+
+<h2>Alignment</h2>
+<h3> Aligning with auto margins</h3>
+<p>Note: If free space is distributed to auto margins, the alignment properties will have no effect in that dimension because the margins will have stolen all the free space left over after flexing.</p>
+<div class="flex__example">
+<pre class="prettyprint lang-css linenums flex__code">
+.flex__item_1 { margin-top: auto; }
+.flex__item_2 { margin-bottom: auto; }
+.flex__item_3 { margin-right: auto; }
+.flex__item_4 { margin: auto; }
+.flex__item_5 { margin-left: auto; }
+</pre>
+<div class="flex__container flex__container_8">
+  <div class="flex__item flex__item_1">item 1</div>
+  <div class="flex__item flex__item_2">item 2</div>
+  <div class="flex__item flex__item_3">item 3</div>
+  <div class="flex__item flex__item_4">item 4</div>
+  <div class="flex__item flex__item_5">item 5</div>
+</div>
+</div>
+
+<h3>Axis Alignment: the justify-content property</h3>
+<p>The justify-content property aligns flex items along the main axis of the current line of the flex container. This is done after any flexible lengths and any auto margins have been resolved.</p>
+<ul>
+  <li>flex-start</li>
+  <li>flex-end</li>
+  <li>center</li>
+  <li>space-between</li>
+  <li>space-around</li>
+</ul>
+
+<div class="flex__example">
+<pre class="prettyprint lang-css linenums flex__code">
+.flex__container {
+  justify-content: space-around;
+}
+</pre>
+<div class="flex__container flex__container_9">
+  <div class="flex__item flex__item_1">item 1</div>
+  <div class="flex__item flex__item_2">item 2</div>
+  <div class="flex__item flex__item_3">item 3</div>
+  <div class="flex__item flex__item_4">item 4</div>
+  <div class="flex__item flex__item_5">item 5</div>
+</div>
+</div>
+
+<h3>Cross-axis Alignment: the align-items and align-self properties</h3>
+<p>Flex items can be aligned in the cross axis of the current line of the flex container, similar to justify-content but in the perpendicular direction. align-items sets the default alignment for all of the flex container’s items, including anonymous flex items. align-self allows this default alignment to be overridden for individual flex items.</p>
+<ul>
+  <li>flex-start</li>
+  <li>flex-end</li>
+  <li>center</li>
+  <li>baseline</li>
+  <li>stretch</li>
+</ul>
+
+<div class="flex__example">
+<pre class="prettyprint lang-css linenums flex__code">
+.flex__container {
+  align-items: flex-start;
+}
+/*
+ height of the items are various
+*/
+</pre>
+<div class="flex__container flex__container_10">
+  <div class="flex__item flex__item_1">item 1</div>
+  <div class="flex__item flex__item_2">item 2</div>
+  <div class="flex__item flex__item_3">item 3</div>
+  <div class="flex__item flex__item_4">item 4</div>
+  <div class="flex__item flex__item_5">item 5</div>
+</div>
+</div>
+
+<div class="flex__example">
+<pre class="prettyprint lang-css linenums flex__code">
+.flex__container {
+  align-items: baseline;
+}
+/*
+ hight and line-height of the items are various
+*/
+</pre>
+<div class="flex__container flex__container_11">
+  <div class="flex__item flex__item_1">item 1</div>
+  <div class="flex__item flex__item_2">item 2</div>
+  <div class="flex__item flex__item_3">item 3</div>
+  <div class="flex__item flex__item_4">item 4</div>
+  <div class="flex__item flex__item_5">item 5</div>
+</div>
+</div>
+
+<div class="flex__example">
+<pre class="prettyprint lang-css linenums flex__code">
+.flex__container { align-items: flex-end; }
+.flex__item_3 { align-self: flex-start; }
+.flex__item_4 { align-self: stretch; }
+.flex__item_5 { align-self: center; }
+</pre>
+<div class="flex__container flex__container_12">
+  <div class="flex__item flex__item_1">item 1</div>
+  <div class="flex__item flex__item_2">item 2</div>
+  <div class="flex__item flex__item_3">item 3</div>
+  <div class="flex__item flex__item_4">item 4</div>
+  <div class="flex__item flex__item_5">item 5</div>
+</div>
+</div>
+
+<h3>Packing Flex Lines: the align-content property</h3>

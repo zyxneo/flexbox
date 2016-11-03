@@ -57,4 +57,167 @@
 //vendor
 @import "style/prettify";
 
+
+
+.flex {
+  &__example {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    margin-bottom: 3em;
+  }
+
+  &__code,
+  &__container {
+    flex-basis: calc(50% - 10px);
+  }
+
+  &__code {
+    margin: 0 20px 0 0;
+  }
+
+  &__container {
+    display: flex;
+    background: mediumpurple;
+    border: 1px solid rebeccapurple;
+  }
+
+  &__container_3 {
+    flex-direction: column-reverse;
+  }
+
+  &__container_4 {
+    flex-wrap: wrap;
+
+    .flex__item {
+      min-width: 40%;
+    }
+  }
+
+  &__container_5 {
+    flex-flow: row-reverse wrap-reverse;
+
+    .flex__item {
+      min-width: 40%;
+    }
+  }
+
+  &__container_6 {
+    .flex__item_1 {
+      order: 3;
+    }
+    .flex__item_2 {
+      order: 5;
+    }
+    .flex__item_3 {
+      order: 4;
+    }
+    .flex__item_4 {
+      order: 1;
+    }
+    .flex__item_5 {
+      order: 2;
+    }
+  }
+
+  &__container_7 {
+    .flex__item_1 {
+      flex-grow: 1;
+    }
+    .flex__item_2 {
+      flex-shrink: 1;
+    }
+    .flex__item_3 {
+      flex-basis: 90px;
+    }
+    .flex__item_4 {
+      flex: 1 0;
+    }
+    .flex__item_5 {
+      flex: 0 1;
+    }
+  }
+
+  &__container_8 {
+    .flex__item_1 {
+      margin-top: auto;
+    }
+    .flex__item_2 {
+      margin-bottom: auto;
+    }
+    .flex__item_3 {
+      margin-right: auto;
+    }
+    .flex__item_4 {
+      margin: auto;
+    }
+    .flex__item_5 {
+      margin-left: auto;
+    }
+  }
+
+  &__container_9 {
+    justify-content: space-around;
+  }
+
+  &__container_11,
+  &__container_10 {
+    .flex__item_1 {
+      height: 50px;
+    }
+    .flex__item_2 {
+      height: 70px;
+    }
+    .flex__item_3 {
+      height: 20px;
+    }
+    .flex__item_4 {
+      height: 100px;
+    }
+    .flex__item_5 {
+      height: 35px;
+    }
+  }
+
+  &__container_10 {
+    align-items: flex-start;
+  }
+
+  &__container_11 {
+    .flex__item_1 {
+      line-height: 80px;
+    }
+    .flex__item_2 {
+      line-height: 70px;
+    }
+    .flex__item_3 {
+      line-height: 50px;
+    }
+    .flex__item_4 {
+      line-height: 30px;
+    }
+    .flex__item_5 {
+      line-height: 35px;
+    }
+    align-items: baseline;
+  }
+
+  &__container_12 {
+    .flex__item_3 {
+      align-self: flex-start;
+    }
+    .flex__item_4 {
+      align-self: stretch;
+    }
+    .flex__item_5 {
+      align-self: center;
+    }
+    align-items: flex-end;
+  }
+
+  &__item {
+    background: salmon;
+    color: firebrick;
+    border: 1px solid firebrick;
+  }
 }
