@@ -13,9 +13,10 @@ export default class Playground extends React.Component {
   }
 
   render() {
-    return ( <FlexContainer addChild={this.onAddChild.bind(this)} removeChild={this.onRemoveChild.bind(this)}>
-      {this.state.itemArray}
-    </FlexContainer>
+    return (
+      <FlexContainer addChild={this.onAddChild.bind(this)} removeChild={this.onRemoveChild.bind(this)}>
+        {this.state.itemArray}
+      </FlexContainer>
     );
   }
 
@@ -27,9 +28,12 @@ export default class Playground extends React.Component {
   }
 
   onRemoveChild() {
-    this.setState({
-      numItem: this.state.numItem - 1,
-      itemArray: this.state.itemArray.slice(0, -1)
-    });
+    // remove only if exist
+    if (this.state.numItem > 0) {
+      this.setState({
+        numItem: this.state.numItem - 1,
+        itemArray: this.state.itemArray.slice(0, -1)
+      });
+    }
   }
 }

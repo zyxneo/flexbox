@@ -8,9 +8,6 @@ export default class Header extends React.Component {
     return (
       <header class="site__header">
         <div class="site__container">
-          <div class="header__branding">
-            <a href="/flexbox/">Home</a>
-          </div>
           <nav class="header__nav">
             <ul role="nav" class="list-inline">
               <NavLink to="/flexbox/" >Home</NavLink>
