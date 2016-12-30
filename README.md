@@ -2,15 +2,10 @@
 
 Flexbox, BEM expermental example
 
-see
-* https://github.com/philipwalton/solved-by-flexbox.git
-* https://css-tricks.com/snippets/css/a-guide-to-flexbox/
-* http://www.sketchingwithcss.com/samplechapter/cheatsheet.html
-
 ```sh
 # Clone the git repository and cd into the cloned directory.
 git clone https://github.com/zyxneo/flexbox.git
-cd solved-by-flexbox
+cd flexbox
 
 # Install the dependencies
 npm install

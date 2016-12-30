@@ -6,7 +6,7 @@ export default class AboutPage extends React.Component {
       return (
         <main class="site__main">
           <div class="site__container">
-            <h1>AboutPage</h1>
+            <h1>About</h1>
           </div>
         </main>
       )
