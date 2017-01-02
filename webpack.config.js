@@ -2,25 +2,28 @@ var path = require("path");
 var webpack = require("webpack");
 var debug = process.env.NODE_ENV !== "production";
 
+var BUILD_DIR = path.resolve(__dirname, ".");
+var APP_DIR = path.resolve(__dirname, "./src");
+
 module.exports = {
   //devtool: debug ? "inline-sourcemap" : null,
 
-  entry: "./src/index.js",
+  entry: APP_DIR + "/index.js",
   output: {
     filename: "bundle.js",
-    path: "./",
+    path: BUILD_DIR,
     publicPath: "/flexbox/",
   },
   module: {
     loaders: [
       {
         test: /\.css$/,
-        loader: "style!css",
-        exclude: /node_modules/
+        include : APP_DIR,
+        loader: "style!css"
       },
       {
         test: /\.jsx?$/,         // Match both .js and .jsx files
-        exclude: /node_modules/,
+        include : APP_DIR,
         loader: "babel-loader",
         query:
           {
@@ -30,10 +33,12 @@ module.exports = {
       },
       {
         test: /\.scss$/,
+        include : APP_DIR,
         loaders: ["style", "css", "sass"]
       },
       {
         test: /\.html$/,
+        include : APP_DIR,
         loader: "html"
       }
     ]
