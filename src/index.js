@@ -1,6 +1,4 @@
 require("./style.scss");
-require("../src/script/prettify.js");
-
 
 import React from "react";
 import {render} from "react-dom";

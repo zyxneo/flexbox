@@ -1,6 +1,8 @@
+
+@import "../style/bootstrap/variables";
+
 .teaser {
   min-height: 200px;
-  &_pink {
-    background: deeppink;
-  }
+  background: $brand-info;
+  margin-bottom: 40px;
 }

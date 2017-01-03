@@ -23,7 +23,7 @@ export default class Playground extends React.Component {
   onAddChild() {
     this.setState({
       numItem: this.state.numItem + 1,
-      itemArray: this.state.itemArray.concat(<FlexItem number={this.state.numItem}/>)
+      itemArray: this.state.itemArray.concat(<FlexItem number={this.state.numItem} key={this.state.numItem}/>)
     });
   }
 

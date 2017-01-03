@@ -1,0 +1,57 @@
+
+@import "../style/bootstrap/variables";
+
+.site__header {
+  background: $gray-dark;
+  color: $gray-light;
+  min-height: 60px;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.header__nav,
+.header__nav-list,
+.nav__item,
+.nav__link,
+.link__item {
+  display: flex;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.nav__link {
+  color: $gray-lightest;
+
+  &:hover,
+  &:active,
+  &:focus {
+    text-decoration: none;
+    color: $gray-lighter;
+    outline: none;
+  }
+}
+
+.nav__icon {
+  color: $brand-primary;
+  font-style: normal;
+  font-size: 40px;
+  line-height: 40px;
+  margin-right: 10px;
+}
+
+.link__item {
+  flex-direction: column;
+  justify-content: space-around;
+  font-size: 20px;
+  line-height: 20px;
+  font-weight: 800;
+  margin-right: 30px;
+}
+
+.nav__desc {
+  color: $gray-light;
+  font-size: 14px;
+  line-height: 14px;
+  font-weight: 200;
+}
