@@ -1,8 +1,16 @@
+
+require("../script/prettify.js");
+
 import React from "react";
 import Teaser from "../layout/Teaser";
 import properties from "../articles/properties.html";
 
 export default class PropertiesPage extends React.Component {
+
+  componentDidMount() {
+    prettyPrint()
+  }
+
   render() {
 
       return (

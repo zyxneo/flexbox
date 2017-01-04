@@ -1,43 +1,46 @@
+
+@import "../style/bootstrap/variables";
+
 .pln {
-  color: #000
+  color: $gray;
 }
 
 @media screen {
   .str {
-    color: #080
+    color: $brand-success;
   }
   .kwd {
-    color: #008
+    color: $brand-primary;
   }
   .com {
-    color: #800
+    color: $gray-light;
   }
   .typ {
     color: #606
   }
   .lit {
-    color: #066
+    color: $brand-info;
   }
   .pun,
   .opn,
   .clo {
-    color: #660
+    color: $brand-success;
   }
   .tag {
-    color: #008
+    color: $brand-primary;
   }
   .atn {
-    color: #606
+    color: $brand-warning
   }
   .atv {
-    color: #080
+    color: $brand-danger
   }
   .dec,
   .var {
     color: #606
   }
   .fun {
-    color: red
+    color: $brand-danger;
   }
 }
 
@@ -47,7 +50,7 @@ projection {
     color: #060
   }
   .kwd {
-    color: #006;
+    color: $brand-primary;
     font-weight: bold
   }
   .com {
@@ -67,7 +70,7 @@ projection {
     color: #440
   }
   .tag {
-    color: #006;
+    color: $brand-primary;
     font-weight: bold
   }
   .atn {
@@ -79,17 +82,18 @@ projection {
 }
 
 pre.prettyprint {
-  border: 1px solid gainsboro;
+  border: 1px solid $gray-lighter;
   border-radius: 5px;
+  color: $gray-light;
 }
 
 ol.linenums {
   margin-top: 0;
   margin-bottom: 0;
-  background: lightgray;
+  background: $gray-lighter;
 
   li {
-    background: ghostwhite;
+    background: $gray-lightest;
     padding: 0 0 0 3px;
   }
 }
