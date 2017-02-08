@@ -15,7 +15,7 @@ export default class PropertiesPage extends React.Component {
 
       return (
         <main class="site__main">
-          <div class="site__container">
+          <div class="container">
             <h1>Flexbox CSS properties</h1>
 
             <section>
@@ -23,7 +23,6 @@ export default class PropertiesPage extends React.Component {
               </article>
             </section>
           </div>
-          <Teaser/>
         </main>
       )
   }

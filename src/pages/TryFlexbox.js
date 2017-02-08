@@ -6,7 +6,7 @@ export default class TryFlexbox extends React.Component {
 
       return (
         <main class="site__main">
-          <div class="site__container">
+          <div class="container">
             <h1>Try Flexbox</h1>
             <Playground/>
           </div>

@@ -149,11 +149,84 @@
 </div>
 
 <h2>Flexibility</h2>
+
+<h3>flex grow</h3>
+<p></p>
+
+<div class="flex__example">
+<pre class="prettyprint lang-css linenums flex__code">
+.flex__item_2 {
+  flex-grow: 1;
+}
+</pre>
+<div class="flex__container flex__container_71">
+  <div class="flex__item flex__item_1">item 1</div>
+  <div class="flex__item flex__item_2">item 2</div>
+  <div class="flex__item flex__item_3">item 3</div>
+  <div class="flex__item flex__item_4">item 4</div>
+  <div class="flex__item flex__item_5">item 5</div>
+</div>
+</div>
+
+<div class="flex__example">
+<pre class="prettyprint lang-css linenums flex__code">
+.flex__item_2 { flex-grow: 3; }
+.flex__item_3 { flex-grow: 2; }
+.flex__item_4 { flex-grow: 3; }
+</pre>
+<div class="flex__container flex__container_72">
+  <div class="flex__item flex__item_1">item 1</div>
+  <div class="flex__item flex__item_2">item 2</div>
+  <div class="flex__item flex__item_3">item 3</div>
+  <div class="flex__item flex__item_4">item 4</div>
+  <div class="flex__item flex__item_5">item 5</div>
+</div>
+</div>
+
+<h3>flex shrink</h3>
+<p></p>
+
+<div class="flex__example">
+<pre class="prettyprint lang-css linenums flex__code">
+.flex__item { flex-shrink: 0; }
+.flex__item_1 { flex-basis: 55%; }
+.flex__item_3 { flex-shrink: 1; }
+</pre>
+<div class="flex__container flex__container_73">
+  <div class="flex__item flex__item_1">item 1</div>
+  <div class="flex__item flex__item_2">item 2</div>
+  <div class="flex__item flex__item_3">item 3</div>
+  <div class="flex__item flex__item_4">item 4</div>
+  <div class="flex__item flex__item_5">item 5</div>
+</div>
+</div>
+
+
+<h3>flex basis</h3>
+<p></p>
+
+<div class="flex__example">
+<pre class="prettyprint lang-css linenums flex__code">
+.flex__container { flex-wrap: wrap; }
+.flex__item_1 {
+  flex-basis: 320px;
+  flex-shrink: 0;
+}
+</pre>
+<div class="flex__container flex__container_74">
+  <div class="flex__item flex__item_1">item 1</div>
+  <div class="flex__item flex__item_2">item 2</div>
+  <div class="flex__item flex__item_3">item 3</div>
+  <div class="flex__item flex__item_4">item 4</div>
+  <div class="flex__item flex__item_5">item 5</div>
+</div>
+</div>
+
 <h3>The flex Shorthand</h3>
 <p>The flex property specifies the components of a flexible length
 : the flex grow factor and flex shrink factor, and the flex basis.</p>
 <p>Value: none | [ &lt;‘flex-grow’&gt; &lt;‘flex-shrink’&gt;? || &lt;‘flex-basis’&gt; ]<br/>
-Initial: 1 0 auto </p>
+Initial: 0 0 auto (?)</p>
 <p>See more: <a href="https://www.w3.org/TR/css-flexbox-1/#flex-property">w3.org - The flex Shorthand</a></p>
 <div class="flex__example">
 <pre class="prettyprint lang-css linenums flex__code">
@@ -280,3 +353,24 @@ Initial: 1 0 auto </p>
 </div>
 
 <h3>Packing Flex Lines: the align-content property</h3>
+
+<div class="flex__example">
+<pre class="prettyprint lang-css linenums flex__code">
+flex__container {
+  flex-wrap: wrap;
+  align-content: center;
+  min-height: 200px;
+}
+
+.flex__item {
+  flex-basis: 50%;
+}
+</pre>
+<div class="flex__container flex__container_13">
+  <div class="flex__item flex__item_1">item 1</div>
+  <div class="flex__item flex__item_2">item 2</div>
+  <div class="flex__item flex__item_3">item 3</div>
+  <div class="flex__item flex__item_4">item 4</div>
+  <div class="flex__item flex__item_5">item 5</div>
+</div>
+</div>

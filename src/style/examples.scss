@@ -1,0 +1,80 @@
+
+@import "../style/bootstrap/variables";
+
+.shop {
+  /*
+  display: flex;
+  flex-flow: row wrap;
+  margin: 0 -$spacer-x/2;
+  */
+  &__item {
+    position: relative;
+    display: flex;
+    /*flex: 1 0 400px;*/
+    flex-flow: column wrap;
+    margin: $spacer-y 0;
+    background: $gray-lighter;
+    border-radius: $border-radius;
+    padding: $spacer;
+
+    &.featured {
+      &::before {
+        content: "Featured";
+        display: block;
+        position: absolute;
+        top: 0;
+        right: 0;
+        padding: 0 10px;
+        background: $brand-warning;
+        color: $gray-lightest;
+      }
+    }
+  }
+
+}
+
+.item__footer {
+  display: flex;
+  margin: -$spacer/2;
+
+  .btn {
+    margin: $spacer/2;
+  }
+}
+
+.button-order-example--1 {
+  .button--b {
+    order: -1;
+  }
+}
+
+.button-order-example--2 {
+  .button--a {
+    margin-right: auto;
+  }
+
+  .button--b {
+    order: -1;
+  }
+}
+
+.button-order-example--3 {
+  .button--a {
+    order: 1;
+  }
+
+  .button--c {
+    order: -1;
+    margin-right: auto;
+  }
+}
+
+.shop__item.featured {
+  order: -1;
+}
+
+.item-order-example--1 {
+  .item__body {
+    order: 1;
+  }
+}

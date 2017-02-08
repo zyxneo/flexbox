@@ -2,7 +2,7 @@
 
 Flexbox, BEM expermental example
 
-[https://github.com/leejordan/reflex](Reflex) grid used
+Bootstrap grid used
 
 ```sh
 # Clone the git repository and cd into the cloned directory.
@@ -16,4 +16,5 @@ npm install
 npm run dev
 
 ```
+
 navigate to [http://localhost:8080/flexbox/](http://localhost:8080/flexbox/)

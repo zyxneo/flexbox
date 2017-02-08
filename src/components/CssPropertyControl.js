@@ -4,7 +4,7 @@ export default class CssPropertyControl extends React.Component {
   render () {
     return (
       <div className={"item-" + this.props.number}>
-        <input type="number" value="0" steps="1"/>
+        <input type="number" value="0"/>
         <style>
           .flex__item_...
         </style>
