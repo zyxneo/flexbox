@@ -29,7 +29,7 @@ export default class Header extends React.Component {
                 <span class="link__item">Tryit!<span class="nav__desc">for the fun</span></span>
               </NavLink>
               <NavLink to="/flexbox/about" >
-                <i class="nav__icon icon">☸</i>
+                <i class="nav__icon icon">🦄</i>
                 <span class="link__item">About<span class="nav__desc">to stay in contact</span></span>
               </NavLink>
             </ul>
