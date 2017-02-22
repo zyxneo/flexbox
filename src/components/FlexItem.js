@@ -13,7 +13,9 @@ export default class FlexItem extends React.Component {
       flexShrink: item.flexShrink,
       flexGrow: item.flexGrow,
       flexBasis: item.flexBasis,
-      alignSelf: item.alignSelf
+      alignSelf: item.alignSelf,
+      order: item.order,
+      margin: item.margin
 
     };
     let isActiveClass = isActive ? " is-active" : "";

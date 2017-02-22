@@ -1,19 +1,20 @@
 import React from "react";
 import SelectInput from "./common/SelectInput";
+import TextInput from "./common/TextInput";
 
-export default class FlexForm extends React.Component {
+export default class FlexItemForm extends React.Component {
 
   render () {
     let styleObject = this.props.styleObject
     let reference = this.props.reference;
 
     return (
-      <div className={"flex__fprm flex__form_" + this.props.reference}
+      <div className={"col-md-6 flex__form flex__form_" + this.props.reference}
       >
-
+        <h3>Item properties</h3>
         <SelectInput
           name="flexShrink"
-          label="flexShrink"
+          label="flex-shrink"
           value={styleObject.flexShrink}
           defaultOption="0"
           options={[
@@ -23,7 +24,7 @@ export default class FlexForm extends React.Component {
 
         <SelectInput
           name="flexGrow"
-          label="flexGrow"
+          label="flex-grow"
           value={styleObject.flexGrow}
           defaultOption="0"
           options={[
@@ -32,9 +33,15 @@ export default class FlexForm extends React.Component {
           ]}
           onChange={this.props.onChange}/>
 
+        <TextInput
+          name="flexBasis"
+          label="flex-basis"
+          value={styleObject.flexBasis}
+          onChange={this.props.onChange}/>
+
         <SelectInput
           name="alignSelf"
-          label="alignSelf"
+          label="align-self"
           value={styleObject.alignSelf}
           defaultOption="inherit"
           options={[
@@ -44,6 +51,18 @@ export default class FlexForm extends React.Component {
             {value: "baseline", text: "baseline"},
             {value: "stretch", text: "stretch"}
           ]}
+          onChange={this.props.onChange}/>
+
+        <TextInput
+          name="order"
+          label="order"
+          value={styleObject.order}
+          onChange={this.props.onChange}/>
+
+        <TextInput
+          name="margin"
+          label="margin"
+          value={styleObject.margin}
           onChange={this.props.onChange}/>
       </div>
     );

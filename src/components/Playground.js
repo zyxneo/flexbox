@@ -1,6 +1,7 @@
 import React, {PropTypes} from "react";
 import FlexItem from "./FlexItem";
-import FlexForm from "./FlexForm";
+import FlexItemForm from "./FlexItemForm";
+import FlexContainerForm from "./FlexContainerForm";
 import CssControlsContainer from "./CssControlsContainer";
 import CssPropertyControl from "./CssPropertyControl";
 
@@ -14,20 +15,28 @@ export default class Playground extends React.Component {
       selectedItem: 0,
       itemArray: [],
       styleObject: {
-        flexShrink: 1,
-        flexGrow: 0,
+        flexShrink: "1",
+        flexGrow: "0",
         flexBasis: "auto",
         order: "auto",
         alignSelf: "inherit",
-
-        margin: "inherit"
+        margin: ""
+      },
+      containerStyle: {
+        flexDirection: "row",
+        flexWrap: "nowrap",
+        justifyContent: "inherit",
+        alignItems: "inherit",
+        alignContent: "inherit",
+        height: "100px"
       }
     };
 
     this.onItemClick = this.onItemClick.bind(this);
     this.onAddChild = this.onAddChild.bind(this);
     this.onRemoveChild = this.onRemoveChild.bind(this);
-    this.onChange = this.onChange.bind(this);
+    this.onItemChange = this.onItemChange.bind(this);
+    this.onContainerChange = this.onContainerChange.bind(this);
   }
 
   onItemClick (event) {
@@ -59,13 +68,17 @@ export default class Playground extends React.Component {
 
   }
 
+  componentDidMount () {
+    this.onAddChild();
+  }
+
   render() {
     return (
       <div className="tryout-flex">
 
-        <p><a href="#" onClick={this.onAddChild}>Add Another Flex Item</a> <a href="#" onClick={this.onRemoveChild}>Remove Flex Item</a></p>
+        <p><span className="btn btn-success" onClick={this.onAddChild}>➕ Add Another Flex Item</span> <span  className="btn btn-danger" onClick={this.onRemoveChild}>➖ Remove Flex Item</span></p>
 
-        <div class="flex__container">
+        <div class="flex__container flex__container_try" style={this.state.containerStyle}>
           {this.state.itemArray.map((item) =>
               <FlexItem id={item.id}
                         key={item.id}
@@ -76,9 +89,14 @@ export default class Playground extends React.Component {
           )}
         </div>
 
-        <FlexForm onChange={this.onChange}
-                  reference={this.state.selectedItem}
-                  styleObject={this.state.styleObject}/>
+        <div className="row">
+          <FlexContainerForm onChange={this.onContainerChange}
+                    styleObject={this.state.containerStyle}/>
+
+          <FlexItemForm onChange={this.onItemChange}
+                    reference={this.state.selectedItem}
+                    styleObject={this.state.styleObject}/>
+        </div>
       </div>
     );
   }
@@ -96,13 +114,12 @@ export default class Playground extends React.Component {
         id: this.state.numItem,
         totalItems: this.state.numItem,
         selectedItem: this.state.selectedItem,
-        flexShrink: 1,
-        flexGrow: 0,
+        flexShrink: "1",
+        flexGrow: "0",
         flexBasis: "auto",
         order: "auto",
         alignSelf: "inherit",
-
-        margin: "inherit"
+        margin: ""
       })
     });
   }
@@ -117,18 +134,28 @@ export default class Playground extends React.Component {
     }
   }
 
-  onChange (event) {
+  onContainerChange (event) {
+
+    const field = event.target.name;
+    let containerStyle = this.state.containerStyle;
+    let fieldValue = event.target.value;
+    containerStyle[field] = fieldValue;
+
+    this.setState({
+      containerStyle: containerStyle
+    });
+  }
+
+  onItemChange (event) {
 
     const field = event.target.name;
     let styleObject = this.state.styleObject;
     let fieldValue = event.target.value;
     styleObject[field] = fieldValue;
 
-    console.log("fieldValue: ", event.target.value);
     let itemArray = this.state.itemArray;
     let selectedItem = this.state.selectedItem;
     itemArray[selectedItem][field] = fieldValue;
-    console.log("itemArray[selectedItem][field]: ", itemArray[selectedItem][field]);
 
     this.setState({
       itemArray: itemArray,

@@ -1,3 +1,10 @@
+
+@import "../style/bootstrap/variables";
+
 .is-clickable {
   cursor: pointer;
+}
+
+.flex__container_try {
+  margin-bottom: $spacer-y;
 }

@@ -2,14 +2,14 @@ import React, {PropTypes} from "react";
 
 const SelectInput = ({name, label, onChange, defaultOption, value, error, options}) => {
   return (
-    <div className="form-group">
-      <label htmlFor={name}>{label}</label>
-      <div className="field">
+    <div className="form-group row">
+      <label className="col-sm-6 col-form-label col-form-label-sm" htmlFor={name}>{label}</label>
+      <div className="field col-sm-6">
         <select
           name={name}
           value={value}
           onChange={onChange}
-          className="form-control">
+          className="form-control form-control-sm">
           <option value="">{defaultOption}</option>
           {options.map((option) => {
             return <option key={option.value} defaultValue={option.value}>{option.text}</option>;
