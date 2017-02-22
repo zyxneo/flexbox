@@ -2,18 +2,29 @@ import React from "react";
 
 export default class FlexItem extends React.Component {
 
-  itemStyle = {
-    color: "blue",
-    background: "yellow",
-  };
-
   render () {
+    let item = this.props.item;
+    let id = item.id;
+    let rainbowColor = "hsl(" + (208 + Number((360 / (this.props.allItems + 1))) * Number(this.props.id)) + ", 98%, 43%)";
+    let isActive = (id === item.selectedItem);
+    let itemStyle = {
+      color: isActive ? rainbowColor : "#fff",
+      background: isActive ? "#fff": rainbowColor,
+      flexShrink: item.flexShrink,
+      flexGrow: item.flexGrow,
+      flexBasis: item.flexBasis,
+      alignSelf: item.alignSelf
+
+    };
+    let isActiveClass = isActive ? " is-active" : "";
+
     return (
-      <div className={"flex__item flex__item_" + this.props.number}
+      <div className={"flex__item flex__item_" + id + isActiveClass + " is-clickable"}
           onClick={this.props.onSelectItem}
-          style={this.itemStyle}
+          style={itemStyle}
+          data-id={id}
       >
-        {"Item " + this.props.number}
+        {"Item " + id}
       </div>
     );
   }
