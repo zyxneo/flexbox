@@ -14,7 +14,7 @@ export default class Playground extends React.Component {
       numItem: 0,
       selectedItem: 0,
       itemArray: [],
-      styleObject: {
+      itemStyle: {
         flexShrink: "1",
         flexGrow: "0",
         flexBasis: "auto",
@@ -45,17 +45,16 @@ export default class Playground extends React.Component {
     let id = Number(event.currentTarget.dataset.id);
     // set the selectedItem id for all children
     let itemArray = this.state.itemArray;
-    let styleObject = this.state.styleObject;
+    let itemStyle = this.state.itemStyle;
     for (var i = 0; i < itemArray.length; i++) {
       itemArray[i].selectedItem = id;
       if (i === id) {
-        styleObject = {
+        itemStyle = {
           flexShrink: itemArray[i].flexShrink,
           flexGrow: itemArray[i].flexGrow,
           flexBasis: itemArray[i].flexBasis,
           order: itemArray[i].order,
           alignSelf: itemArray[i].alignSelf,
-
           margin: itemArray[i].margin
         }
       }
@@ -63,7 +62,7 @@ export default class Playground extends React.Component {
 
     this.setState({
       selectedItem: id,
-      styleObject: styleObject,
+      itemStyle: itemStyle,
     });
 
   }
@@ -91,11 +90,11 @@ export default class Playground extends React.Component {
 
         <div className="row">
           <FlexContainerForm onChange={this.onContainerChange}
-                    styleObject={this.state.containerStyle}/>
+                    containerStyle={this.state.containerStyle}/>
 
           <FlexItemForm onChange={this.onItemChange}
                     reference={this.state.selectedItem}
-                    styleObject={this.state.styleObject}/>
+                    itemStyle={this.state.itemStyle}/>
         </div>
       </div>
     );
@@ -149,9 +148,9 @@ export default class Playground extends React.Component {
   onItemChange (event) {
 
     const field = event.target.name;
-    let styleObject = this.state.styleObject;
+    let itemStyle = this.state.itemStyle;
     let fieldValue = event.target.value;
-    styleObject[field] = fieldValue;
+    itemStyle[field] = fieldValue;
 
     let itemArray = this.state.itemArray;
     let selectedItem = this.state.selectedItem;
@@ -159,12 +158,12 @@ export default class Playground extends React.Component {
 
     this.setState({
       itemArray: itemArray,
-      styleObject: styleObject
+      itemStyle: itemStyle
     });
   }
 }
 
 Playground.propTypes = {
   itemArray: PropTypes.array,
-  styleObject: PropTypes.object
+  itemStyle: PropTypes.object
 }

@@ -5,7 +5,7 @@ import TextInput from "./common/TextInput";
 export default class FlexContainerForm extends React.Component {
 
   render () {
-    let styleObject = this.props.styleObject
+    let styleObject = this.props.containerStyle
 
     return (
       <div className="col-md-6 flex__form">

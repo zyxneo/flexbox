@@ -20,6 +20,15 @@
   &__container {
     display: flex;
     background: $gray-dark;
+    transition: height .5s ease-in-out;
+  }
+
+  &__item {
+    background: $brand-primary;
+    color: $gray-lightest;
+    border: 5px solid $gray-dark;
+    padding: 5px;
+    transition: flex .5s ease-in-out, margin .5s ease-in-out;
   }
 
   &__container_noformat {
@@ -208,11 +217,4 @@
     }
   }
 
-
-  &__item {
-    background: $brand-primary;
-    color: $gray-lightest;
-    border: 5px solid $gray-dark;
-    padding: 5px;
-  }
 }

@@ -5,7 +5,7 @@ import TextInput from "./common/TextInput";
 export default class FlexItemForm extends React.Component {
 
   render () {
-    let styleObject = this.props.styleObject
+    let styleObject = this.props.itemStyle
     let reference = this.props.reference;
 
     return (

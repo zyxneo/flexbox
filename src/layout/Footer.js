@@ -22,7 +22,7 @@ export default class Footer extends React.Component {
             </ul>
 
             <div class="col-md-6 text-md-right">
-              <p>It is a demonstrational page of CSS flexbox
+              <p>This is a demonstrational page of CSS flexbox
               <br/>
               Hosted on <a href="https://pages.github.com/">GitHub Pages</a></p>
             </div>
