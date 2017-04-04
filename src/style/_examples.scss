@@ -78,3 +78,88 @@
     order: 1;
   }
 }
+
+
+
+.tabBox {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.tabBox__title {
+  flex: 0 0 25%; // Everyone: start at 20%, do not grow, do not shrink
+  max-width: 25%; // No really IE10/11, do not grow bigger than 20%
+  height: 100px;
+  order: -1;
+  font-size: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid white;
+  cursor: pointer;
+
+  &.is-active {
+    order: 0;
+  }
+
+  &:nth-child(8n+1) { background: $brand-danger }
+  &:nth-child(8n+3) { background: $brand-warning }
+  &:nth-child(8n+5) { background: $brand-success }
+  &:nth-child(8n+7) { background: $brand-info }
+
+  &:nth-child(8n+1),
+  &:nth-child(8n+3),
+  &:nth-child(8n+5),
+  &:nth-child(8n+7) {
+
+    &.is-active {
+      background: $brand-primary;
+      color: $gray-lightest;
+    }
+
+    + .tabBox__details {
+      order: 10;
+    }
+  }
+
+}
+
+.tabBox__details {
+  display: none;
+  flex-basis: 100%;
+  height: 200px;
+  background: $gray-lighter;
+  font-size: 40px;
+  justify-content: center;
+  align-items: center;
+}
+
+.tabBox__title.is-active + .tabBox__details {
+  display: flex;
+  order: 10;
+}
+
+.tabBox__title:nth-child(8n+1).is-active + .tabBox__details + .tabBox__title {
+  order: 5;
+}
+.tabBox__title:nth-child(8n+1).is-active + .tabBox__details + .tabBox__title + .tabBox__details + .tabBox__title {
+  order: 6;
+}
+.tabBox__title:nth-child(8n+1).is-active + .tabBox__details + .tabBox__title + .tabBox__details + .tabBox__title + .tabBox__details + .tabBox__title {
+  order: 7;
+}
+
+.tabBox__title:nth-child(8n+3).is-active + .tabBox__details + .tabBox__title {
+  order: 5;
+}
+.tabBox__title:nth-child(8n+3).is-active + .tabBox__details + .tabBox__title + .tabBox__details + .tabBox__title {
+  order: 6;
+}
+.tabBox__title:nth-child(8n+5).is-active + .tabBox__details + .tabBox__title {
+  order: 5;
+}
+
+.tabBox__title.is-active ~ .tabBox__title {
+  order: 20;
+}
+
